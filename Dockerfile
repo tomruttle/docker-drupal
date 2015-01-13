@@ -1,5 +1,5 @@
 FROM tomruttle/apache-php
-MAINTAINER Tom Ruttle <thruttle@gmail.com>
+MAINTAINER Tom Ruttle <tom@tomruttle.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
