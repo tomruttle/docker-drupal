@@ -12,6 +12,11 @@ RUN apt-get update &&\
         php5-mysql \
         mysql-client
 
+# Install so we can run drush commands: sql-sync, rsync, etc.
+RUN apt-get -yq install \
+        openssh-client \
+        rsync
+
 # Need allow_url_fopen for S3 upload to work; Need huge memory for Drupal to work
 RUN sed -i -e"s/allow_url_fopen.*/allow_url_fopen = On/" /etc/php5/apache2/php.ini ;\
     sed -i -e"s/^memory_limit.*/memory_limit = 256M/" /etc/php5/apache2/php.ini
